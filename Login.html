@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - Pulso</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+    <body>
+        <header class="header">
+            <div class="wrap bar">
+                <a class="brand" href="#"><span class="dot">✦</span>GOODTIMES</a>
+                <a href="#">Volver al Inicio</a>
+            </div>
+        </header>
+        <main class="narrow">
+            <div class="panel">
+                <p class="eyebrow">Tu espacio GoodTimesa</p>
+                <h1 class="page-title">Bienvenido de nuevo</h1>
+                <p class="sub">Elige el perfil con el que quieres entrar.</p>
+                <div class="role-tabs">
+                    <button type="button" class="active" data-role="cliente">
+                        Soy Cliente
+                    </button>
+                    <button type="button" class="active" data-role="admin">Administrador</button>
+                </div>
+                <form id="login-form">
+                    <label class="field">Correo electronico<input id="email" type="email" required value="cliente@correo.com"></label>
+                    <label class="field">Contraseña<input id="password" type="password" required value="test1234"></label>
+                    <button class="btn-dark full" type="submit">Ingresar</button>
+                </form>
+                <p id="error" class="notice hidden" role="alert"></p>
+                <div class="hint" style="margin-top: 18px">
+                    <strong>Credenciales de demostración</strong>
+                    <br>Cliente: cliente@correo.com / test1234
+                    <br>Administrador: admin@correo.com / test1234
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
