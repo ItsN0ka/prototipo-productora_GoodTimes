@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizar Evento - GoodTimes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/common.js"></script>
+    <script defer src="js/cotizar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="wrap bar">
+            <a class="brand" href="index.html"><span class="dot">✦</span>GOODTIMES</a>
+            <div class="top-links">
+                <a href="cliente.html">Mis eventos</a>
+                <button id="logout">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <main class="wrap page">
+        <p class="eyebrow">Nueva cotización</p>
+        <h1 class="page-tittle">Hagamos algo inolvidable</h1>
+        <p class="sub">Cuenta lo esencial y preparamos una propuesta a tu medida.</p>
+        <div class="two-col">
+            <aside class="panel">
+                <h2>Antes de empezar</h2>
+                <ul class="checklist">
+                    <li>Cotizar sin costo</li>
+                    <li>Solicitud registrada en este navegador</li>
+                    <li>Podrás verlas en "Mis eventos"</li>
+                </ul>
+                <p class="hint">
+                    Los horarios marcados como ocupados son datos de ejemplos
+                </p>
+            </aside>
+            <form id="quote-form" class="panel">
+                <div class="form-grid">
+                    <label class="field">Nombre Completo <input name="contactName" required placeholder="Tu Nombre"></label>
+                    <label class="field">Correo Electronico <input name="email" required type="email" placeholder="Tu Correo"></label>
+                    <label class="field">Telefono <input name="fono" required type="fono" placeholder="+569 1234 5678"></label>
+                    <label class="field">Tipo de Evento <select name="type" required>
+                        <option value="">Selecciona...</option>
+                        <option>Evento corporativo</option>
+                        <option>Boda o celebración</option>
+                        <option>Concierto</option>
+                        <option>Activación de marca</option>
+                    </select></label>
+                    <label class="field">Nombre del evento <input name="name" required placeholder="Ej: Aniversario Casino Lucky"></label>
+                    <label class="field">Cantidad de asistentes <input name="guest" required type="number" min="1" max="100000" placeholder="150"></label>
+                    <label class="field span-2">Lugar o zona <input name="place" required placeholder="recinto o corporación"></label>
+                    <label class="field span-2">Fecha deseada<input name="date" id="q-date" type="date" required ></label>
+                    <div class="field span-2">
+                        <span>Horario disponible</span>
+                        <div class="slots" id="slots"></div>
+                        <small class="sub" id="slot-help">Selecciona una fecha y luego un horario.</small>
+                    </div>
+                    <label class="field span-2">Cuentanos sobre tu idea <textarea name="description" rows="4" required placeholder="Conecepto, necesidades tecnicas, ambiente....."></textarea></label>
+                </div>
+                <button class="btn-dark full" id="submit" disabled >Enviar Solicitud</button>
+                <p id="feedback" class="notice hidden" role="status"></p>
+            </form>
+        </div>
+    </main>
+    <script>
+        document
+        .getElementById("logout")
+        .addEventListener("click", () => Goodtimes.logout());
+    </script>
+</body>
+</html>
