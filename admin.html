@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración - Pulso Productora</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/common.js"></script>
+    <script defer src="js/admin.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrap bar">
+        <a class="brand" href="index.html"
+          ><span class="dot">✦</span>PULSO ADMIN</a
+        >
+        <div class="top-links">
+          <a href="index.html">Sitio público</a>
+          <button id="logout">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap page">
+      <p class="eyebrow">Panel de administración</p>
+      <h1 class="page-title">Así marcha la productora.</h1>
+      <p class="sub">
+        Resumen de solicitudes, estados e ingresos de demostración.
+      </p>
+      <section class="stats">
+        <div class="stat">
+          <span>Valor total de eventos</span>
+          <strong id="revenue">$0</strong>
+        </div>
+        <div class="stat">
+          <span>Solicitudes activas</span>
+          <strong id="active">0</strong>
+        </div>
+        <div class="stat">
+          <span>Por cobrar</span>
+          <strong id="due">$0</strong>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="toolbar">
+          <div>
+            <h2>Eventos y cotizaciones</h2>
+            <p class="sub">
+              Puedes abrir una fila para cambiar el estado o registrar un pago.
+            </p>
+          </div>
+          <select id="filter" aria-label="Filtrar eventos">
+            <option value="Todos">Todos los estados</option>
+            <option>Pendiente</option>
+            <option>Confirmado</option>
+            <option>Finalizado</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Evento / cliente</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Valor</th>
+                <th>Pagado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div id="editor" class="notice hidden"></div>
+      </section>
+      <p class="hint">
+        Los datos se guardan en el almacenamiento local de este navegador. No
+        hay base de datos compartida entre dispositivos.
+      </p>
+    </main>
+    <script>
+      document
+        .getElementById("logout")
+        .addEventListener("click", () => Pulso.logout());
+    </script>
+  </body>
+</html>
