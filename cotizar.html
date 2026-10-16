@@ -11,9 +11,9 @@
 <body>
     <header class="header">
         <div class="wrap bar">
-            <a class="brand" href="#"><span class="dot">✦</span>GOODTIMES</a>
+            <a class="brand" href="index.html"><span class="dot">✦</span>GOODTIMES</a>
             <div class="top-links">
-                <a href="#">Mis eventos</a>
+                <a href="cliente.html">Mis eventos</a>
                 <button id="logout">Cerrar sesión</button>
             </div>
         </div>
@@ -62,5 +62,10 @@
             </form>
         </div>
     </main>
+    <script>
+        document
+        .getElementById("logout")
+        .addEventListener("click", () => Goodtimes.logout());
+    </script>
 </body>
 </html>
