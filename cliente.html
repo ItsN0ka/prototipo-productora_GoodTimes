@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mis eventos — GoodTimes</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/common.js"></script>
+    <script defer src="js/cliente.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrap bar">
+        <a class="brand" href="index.html"><span class="dot">✦</span>GOODTIMES</a>
+        <div class="top-links">
+          <a href="index.html">Sitio público</a
+          ><button id="logout">Cerrar sesión</button
+          ><a class="btn" href="cotizar.html">+ Nueva cotización</a>
+        </div>
+      </div>
+    </header>
+    <main class="wrap page">
+      <div class="toolbar">
+        <div>
+          <p class="eyebrow">Portal del cliente</p>
+          <h1 class="page-title">Tus eventos, en un solo lugar.</h1>
+          <p class="sub" id="greeting">Revisa tus solicitudes y su estado.</p>
+        </div>
+      </div>
+      <p id="sent" class="notice hidden" role="status">
+        ¡Solicitud registrada! Ya aparece en tu lista de eventos.
+      </p>
+      <section class="stats">
+        <div class="stat">
+          <span>Eventos activos</span><strong id="active">0</strong>
+        </div>
+        <div class="stat">
+          <span>Cotizaciones pendientes</span><strong id="pending">0</strong>
+        </div>
+        <div class="stat">
+          <span>Eventos confirmados</span><strong id="confirmed">0</strong>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="toolbar">
+          <div>
+            <h2>Mis cotizaciones y eventos</h2>
+            <p class="sub">
+              Selecciona una solicitud para consultar sus detalles.
+            </p>
+          </div>
+          <select id="filter" aria-label="Filtrar por estado">
+            <option value="Todos">Todos los estados</option>
+            <option>Pendiente</option>
+            <option>Confirmado</option>
+            <option>Finalizado</option>
+          </select>
+        </div>
+        <div id="events" class="event-list"></div>
+        <p id="empty" class="sub hidden">
+          Todavía no tienes eventos en esta cuenta. Crea una cotización para
+          comenzar.
+        </p>
+        <div id="details" class="notice hidden"></div>
+      </section>
+    </main>
+    <script>
+      document
+        .getElementById("logout")
+        .addEventListener("click", () => Goodtimes.logout());
+    </script>
+  </body>
+</html>
