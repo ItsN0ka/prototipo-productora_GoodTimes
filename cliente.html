@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Mis eventos — GoodTimes</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="js/common.js"></script>
-    <script defer src="js/cliente.js"></script>
+
   </head>
   <body>
     <header class="header">
       <div class="wrap bar">
         <a class="brand" href="index.html"><span class="dot">✦</span>GOODTIMES</a>
         <div class="top-links">
-          <a href="index.html">Sitio público</a
-          ><button id="logout">Cerrar sesión</button
-          ><a class="btn" href="cotizar.html">+ Nueva cotización</a>
+          <a href="index.html">Sitio público</a>
+          <a class="btn-light" href="login.html">Cerrar sesión</a>
+          <a class="btn" href="cotizar.html">+ Nueva cotización</a>
         </div>
       </div>
     </header>
@@ -24,21 +23,18 @@
         <div>
           <p class="eyebrow">Portal del cliente</p>
           <h1 class="page-title">Tus eventos, en un solo lugar.</h1>
-          <p class="sub" id="greeting">Revisa tus solicitudes y su estado.</p>
+          <p class="sub">Revisa tus solicitudes y su estado.</p>
         </div>
       </div>
-      <p id="sent" class="notice hidden" role="status">
-        ¡Solicitud registrada! Ya aparece en tu lista de eventos.
-      </p>
       <section class="stats">
         <div class="stat">
-          <span>Eventos activos</span><strong id="active">0</strong>
+          <span>Eventos activos</span><strong id="active">2</strong>
         </div>
         <div class="stat">
-          <span>Cotizaciones pendientes</span><strong id="pending">0</strong>
+          <span>Cotizaciones pendientes</span><strong id="pending">1</strong>
         </div>
         <div class="stat">
-          <span>Eventos confirmados</span><strong id="confirmed">0</strong>
+          <span>Eventos confirmados</span><strong id="confirmed">1</strong>
         </div>
       </section>
       <section class="panel">
@@ -46,7 +42,7 @@
           <div>
             <h2>Mis cotizaciones y eventos</h2>
             <p class="sub">
-              Selecciona una solicitud para consultar sus detalles.
+              La vista estatica muestra de ejemplos
             </p>
           </div>
           <select id="filter" aria-label="Filtrar por estado">
@@ -56,18 +52,37 @@
             <option>Finalizado</option>
           </select>
         </div>
-        <div id="events" class="event-list"></div>
-        <p id="empty" class="sub hidden">
-          Todavía no tienes eventos en esta cuenta. Crea una cotización para
-          comenzar.
-        </p>
-        <div id="details" class="notice hidden"></div>
+        <div class="event-list">
+          <article class="static-event">
+            <div class="static-event-head">
+              <div><strong>Aniversario Grupo Lumen</strong>
+              <p>COT-1082 · Evento corporativo</p></div>
+              <span class="status Confirmado">Confirmado</span>
+            </div>
+            <div class="static-event-meta">
+              <span><strong>Fecha:</strong> 28 nov 2026</span>
+              <span><strong>Lugar:</strong> Terraza Virreyes</span>
+              <span><strong>Asistencia:</strong> 180</span>
+              <span><strong>Valor:</strong> $14.850</span>
+            </div>
+            <p>Cena de aniversario con escenario, presentación institucional y música en vivo.</p>
+          </article>
+          <article class="static-event">
+            <div class="static-event-head">
+              <div><strong>Lanzamiento Colección Aura</strong>
+              <p>COT-1071 · Activación de marca</p></div>
+              <span class="status Pendiente">Pendiente</span>
+            </div>
+            <div class="static-event-meta">
+              <span><strong>Fecha:</strong> 12 dic 2026</span>
+              <span><strong>Lugar:</strong> Por definir</span>
+              <span><strong>Asistencia:</strong> 120</span>
+              <span><strong>Valor:</strong> En evaluación</span>
+            </div>
+            <p>Presentación de producto con experiencia inmersiva y zona de exhibición.</p>
+          </article>
+        </div>
       </section>
     </main>
-    <script>
-      document
-        .getElementById("logout")
-        .addEventListener("click", () => Goodtimes.logout());
-    </script>
   </body>
 </html>

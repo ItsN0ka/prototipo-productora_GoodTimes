@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administración - Pulso Productora</title>
+    <title>Administración - GoodTimes Productora</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="js/common.js"></script>
-    <script defer src="js/admin.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="wrap bar">
         <a class="brand" href="index.html"
-          ><span class="dot">✦</span>PULSO ADMIN</a
+          ><span class="dot">✦</span>GOODTIMES ADMIN</a
         >
         <div class="top-links">
           <a href="index.html">Sitio público</a>
-          <button id="logout">Cerrar sesión</button>
+          <a class="btn" href="login.html">Cerrar sesión</a>
         </div>
       </div>
     </header>
@@ -29,15 +27,15 @@
       <section class="stats">
         <div class="stat">
           <span>Valor total de eventos</span>
-          <strong id="revenue">$0</strong>
+          <strong id="revenue">$75.950</strong>
         </div>
         <div class="stat">
           <span>Solicitudes activas</span>
-          <strong id="active">0</strong>
+          <strong id="active">4</strong>
         </div>
         <div class="stat">
           <span>Por cobrar</span>
-          <strong id="due">$0</strong>
+          <strong id="due">$18.530</strong>
         </div>
       </section>
       <section class="panel">
@@ -45,7 +43,7 @@
           <div>
             <h2>Eventos y cotizaciones</h2>
             <p class="sub">
-              Puedes abrir una fila para cambiar el estado o registrar un pago.
+              Trabajadores, implementos e pagos se muestran como ejemplos. 
             </p>
           </div>
           <select id="filter" aria-label="Filtrar eventos">
@@ -64,23 +62,63 @@
                 <th>Estado</th>
                 <th>Valor</th>
                 <th>Pagado</th>
-                <th>Acciones</th>
+                <th>Trabajadores</th>
+                <th>Implementos</th>
               </tr>
             </thead>
-            <tbody id="rows"></tbody>
+            <tbody id="rows">
+              <tr>
+                <td><strong>Aniversario Grupo lumen</strong>
+                  <div class="sub">cliente@correo.com · COT-1082</div>
+                </td>
+                <td>28 nov 2026</td>
+                <td><span class="status Confirmado">Confirmado</span></td>
+                <td>$14.850</td>
+                <td>$0</td>
+                <td><ul class="compact-list">
+                  <li>Ana Perez</li>
+                  <li>Diego Soto</li>
+                  <li>Camila Rojas</li>
+                    </ul>
+                </td>
+                <td><ul class="compact-list">
+                  <li>Consola de audio</li>
+                  <li>2 microfonos inalambricos</li>
+                  <li>Iluminación LED</li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Lanzamiento Colección Aura</strong>
+                  <div class="sub">cliente@correo.com · COT-1071</div></td>
+                <td>12 dic 2026</td>
+                <td><span class="status Pendiente">Pendiente</span></td>
+                <td>En evaluación</td>
+                <td>$0</td>
+                <td><span class="muted">Por asignar</span></td>
+                <td><span class="muted">Por definfir</span></td>
+              </tr>
+              <tr>
+                <td><strong>Cumbre Fintech</strong>
+                  <div class="sub">banco@correo.com · EV-022</div></td>
+                <td>14 oct 2026</td>
+                <td><span class="status Finalizado">Finalizado</span></td>
+                <td>$24.990</td>
+                <td>$24.990</td>
+                <td><ul class="compact-list">
+                  <li>Equipo Tecnico</li>
+                    </ul>
+                </td>
+                <td><ul class="compact-list">
+                  <li>Audio</li>
+                  <li>Equipo de streaming</li>
+                    </ul>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
-        <div id="editor" class="notice hidden"></div>
       </section>
-      <p class="hint">
-        Los datos se guardan en el almacenamiento local de este navegador. No
-        hay base de datos compartida entre dispositivos.
-      </p>
     </main>
-    <script>
-      document
-        .getElementById("logout")
-        .addEventListener("click", () => Pulso.logout());
-    </script>
   </body>
 </html>
