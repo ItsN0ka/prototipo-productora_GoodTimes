@@ -5,31 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso - Pulso</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/common.js"></script>
-    <script defer src="js/login.js"></script>
 </head>
     <body>
         <header class="header">
             <div class="wrap bar">
-                <a class="brand" href="#"><span class="dot">✦</span>GOODTIMES</a>
+                <a class="brand" href="index.html"><span class="dot">✦</span>GOODTIMES</a>
                 <a href="index.html">Volver al Inicio</a>
             </div>
         </header>
         <main class="narrow">
             <div class="panel">
-                <p class="eyebrow">Tu espacio GoodTimesa</p>
+                <p class="eyebrow-logout">Tu espacio GoodTimesa</p>
                 <h1 class="page-title">Bienvenido de nuevo</h1>
                 <p class="sub">Ingresa con el correo y la contraseña de tu cuenta.</p>
                 <form id="login-form">
-                    <label class="field">Correo electronico<input id="email" name="email" type="email" autocomplete="username" maxlength="254" required></label>
-                    <label class="field">Contraseña<input id="password" name="password" type="password" autocomplete="current-password" maxlength="1024" required ></label>
-                    <button class="btn-dark full" type="submit">Ingresar</button>
+                    <label class="field">Correo electronico<input id="email" name="email" type="email" autocomplete="username" placeholder="tu@correo.com" maxlength="254" required></label>
+                    <label class="field">Contraseña<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Tu contraseña" maxlength="1024" required ></label>
+                    <button class="btn-dark full" type="submit" disabled>Acceso destactivado para el prototipo</button>
                 </form>
-                <p id="error" class="notice hidden" role="alert"></p>
-                <div class="hint" style="margin-top: 18px">
-                    <strong>Credenciales de demostración</strong>
-                    <br>Cliente: cliente@correo.com / test1234
-                    <br>Administrador: admin@correo.com / test1234
+                <p class="hint" style="margin-top: 18px"></p>
+                <div class="actions" style="margin-top: 16px;">
+                    <a class="btn-light" href="cliente.html">Panel Cliente</a>
+                    <a class="btn" href="admin.html">Panel Administrador</a>
                 </div>
             </div>
         </main>
