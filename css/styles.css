@@ -1,7 +1,7 @@
 :root {
   --ink: #171a14;
   --paper: #f5efed;
-  --lime: #d9ff67;
+  --lime: #ff5e00;
   --muted: #707467;
   --line: #e1e1d8;
   --card: #fff;
@@ -86,7 +86,8 @@ button:disabled {
   gap: 22px;
 }
 
-.nav a {
+.nav a,
+.muted {
   color: var(--muted);
 }
 
@@ -129,12 +130,21 @@ button:disabled {
   max-width: 720px;
 }
 
+.eyebrow-logout {
+  text-decoration-line: line-through;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: .78em;
+  font-weight: 800;
+  color: #d8bc40;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: .16em;
   font-size: .78em;
   font-weight: 800;
-  color: #788546;
+  color: #d8bc40;
 }
 
 .hero h1 {
@@ -271,8 +281,8 @@ button:disabled {
 }
 
 .hint {
-  background: #f2f5e8;
-  color: #505744;
+  background: #f5f4e8;
+  color: #574f44;
 }
 
 .stats {
@@ -398,6 +408,31 @@ button:disabled {
     border-radius: 14px
 }
 
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 650px
+}
+
+th,
+td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid var(--line)
+}
+
+th {
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: .06em
+}
+
+tr:last-child td {
+    border-bottom: 0
+}
+
 .notice {
   padding: 14px 16px;
   background: #e9f3d3;
@@ -430,4 +465,56 @@ button:disabled {
 .checklist {
     padding-left: 20px;
     color: var(--muted)
+}
+
+.static-event {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px
+}
+
+.static-event-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap
+}
+
+.static-event-head p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: .9rem
+}
+
+.static-event > p {
+    margin: 0;
+    color: var(--muted)
+}
+
+.static-event-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 16px;
+    font-size: .92rem
+}
+
+.compact-list {
+    min-width: 150px;
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: .9rem
+}
+
+.slot.unavailable {
+    text-decoration: line-through;
+    opacity: .45
+}
+
+.actions {
+    flex-wrap: wrap
 }
